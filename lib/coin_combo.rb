@@ -1,7 +1,10 @@
 class Float
   define_method(:coin_combo) do
-    change = self.to_s().split('.')
-    change = change[1].to_i()
+    if(self.truncate().==(0))
+      change = self.*(100).to_i()
+    else
+      change = self.%(self.truncate()).round(2).*(100).to_i()
+    end
     coins = []
     until change.==(0)
       coins.push(change./(25))
@@ -16,3 +19,10 @@ class Float
     coins
   end
 end
+
+50.23
+23
+
+
+50.53
+50
