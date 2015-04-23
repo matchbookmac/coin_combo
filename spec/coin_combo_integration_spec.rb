@@ -8,6 +8,6 @@ describe('the coin_combo path', {:type => :feature}) do
     visit('/')
     fill_in('change', :with => 0.57)
     click_button('send')
-    expect(page).to have_content('2 Quarters 1 Nickels 2 Pennies')
+    expect(page).to have_content('2 Quarters, 1 Nickels, 2 Pennies')
   end
 end
