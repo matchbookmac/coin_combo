@@ -1,7 +1,7 @@
 class Float
   define_method(:coin_combo) do
     if(self.truncate().==(0))
-      change = self.*(100).to_i()
+      change = self.*(100).round()
     else
       change = self.%(self.truncate()).round(2).*(100).to_i()
     end
@@ -19,10 +19,3 @@ class Float
     coins
   end
 end
-
-50.23
-23
-
-
-50.53
-50
